@@ -5,7 +5,7 @@
     <overview>
         <description>Ui scenario for contact us page</description>
         <name>Ui scenario for contact us page</name>
-        <jira>https://knubitech-team-sq2uw4em.atlassian.net//browse/WIN-11</jira>
+        <jira>https://knubitech-team-sq2uw4em.atlassian.net//browse/WIND-12</jira>
         
         <testRail enabled="true" testCaseId="5"/>
     </overview>
