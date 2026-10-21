@@ -1,0 +1,46 @@
+<scenario xmlns="http://www.testlum.com/testing/model/scenario"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.testlum.com/testing/model/scenario scenario.xsd">
+
+    <overview>
+        <description>Ui scenario for contact us page</description>
+        <name>Ui scenario for contact us page</name>
+        <jira>https://knubitech-team-sq2uw4em.atlassian.net//browse/WIN-11</jira>
+        
+        <testRail enabled="true" testCaseId="5"/>
+    </overview>
+
+    <settings onlyThis="true">
+        
+        
+        <tags>web</tags>
+    </settings>
+
+
+    <web comment="Start web script">
+        <image comment="Full comparison"
+               file="testlum.png">
+            <fullScreen/>
+        </image>
+        <click comment="Click loginText" locator="signIn.loginText"/>
+        <repeat comment="Using repeat tag to perform a repetitive task"
+                variations="login.csv">
+            <input comment="Type text into enterYourEmailInput"
+                   locator="signIn.enterYourEmailInput"
+                   locatorStrategy="locatorId"
+                   value="{{email}}"/>
+            <input comment="Type text into enterPasswordInput"
+                   locator="signIn.enterPasswordInput"
+                   locatorStrategy="locatorId"
+                   value="{{password}}"/>
+            <click comment="Click logInButton" locator="signIn.logInButton"/>
+            <assert comment="Verify element's attribute value">
+                <attribute comment="Verify attribute innerText of validationTextContainer"
+                           locator="signIn.validationTextContainer"
+                           name="innerText">
+                    <content>Password should have at least 1 lowercase letter, 1 uppercase letter and a number, it's length should be at least 8 characters</content>
+                </attribute>
+            </assert>
+        </repeat>
+    </web>
+</scenario>

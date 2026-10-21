@@ -1,0 +1,31 @@
+<integrations xmlns="http://www.testlum.com/testing/model/global-config"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.testlum.com/testing/model/global-config global-config.xsd">
+    <apis>
+        <api alias="Testing_API"
+             enabled="true"
+             url="https://node-express-conduit.appspot.com/api"/>
+    </apis>
+    <postgresIntegration>
+        <postgres alias="DATABASE"
+                  enabled="true"
+                  truncate="false">
+            <jdbcDriver>org.postgresql.Driver</jdbcDriver>
+            <username>neondb_owner</username>
+            <password>npg_qPRi0hu1ZUgl</password>
+            <connectionUrl>jdbc:postgresql://ep-solitary-sky-a8zj2f86-pooler.eastus2.azure.neon.tech:5432/testlum</connectionUrl>
+            <schema>public</schema>
+            <hikari>
+                <connectionTimeout>45000</connectionTimeout>
+                <idleTimeout>60000</idleTimeout>
+                <maxLifetime>180000</maxLifetime>
+                <maximumPoolSize>50</maximumPoolSize>
+                <minimumIdle>5</minimumIdle>
+                <connectionInitSql>SELECT 1</connectionInitSql>
+                <connectionTestQuery>SELECT 1</connectionTestQuery>
+                <poolName>core-postgres-db-pool</poolName>
+                <autoCommit>true</autoCommit>
+            </hikari>
+        </postgres>
+    </postgresIntegration>
+</integrations>

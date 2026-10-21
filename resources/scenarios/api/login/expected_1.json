@@ -1,0 +1,12 @@
+[ {
+  "query" : "SELECT * FROM users",
+  "content" : [ {
+    "id" : 1,
+    "name" : "John",
+    "email" : "john@knubisoft.com"
+  }, {
+    "id" : 2,
+    "name" : "Bob",
+    "email" : "bob@knubisoft.com"
+  } ]
+} ]

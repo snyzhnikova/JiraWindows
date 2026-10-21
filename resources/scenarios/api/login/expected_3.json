@@ -1,0 +1,9 @@
+{
+  "user" : {
+    "username" : "pavlo",
+    "email" : "john@knubisoft.com",
+    "image" : "string",
+    "admin" : false,
+    "token" : "p(any)"
+  }
+}

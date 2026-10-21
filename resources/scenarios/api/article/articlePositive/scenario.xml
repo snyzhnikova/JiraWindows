@@ -1,0 +1,38 @@
+<scenario xmlns="http://www.testlum.com/testing/model/scenario"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.testlum.com/testing/model/scenario scenario.xsd">
+
+    <overview>
+        <description>Positive api test for creating an article</description>
+        <name>Positive api test for creating an article</name>
+        <testRail enabled="true" testCaseId="3"/>
+    </overview>
+
+    <settings>
+        <tags>api</tags>
+    </settings>
+
+
+    <include comment="Add login flow" scenario="/api/login/scenario.xml"/>
+    <http alias="Testing_API"
+          comment="Create an article">
+        <post endpoint="/articles">
+            <response code="200" file="expected_5.json"/>
+            <header data="Bearer {{token}}" name="Authorization"/>
+            <body>
+                <raw>
+                    {
+                      "article": {
+                        "title": "string",
+                        "description": "string",
+                        "body": "string",
+                        "tagList": [
+                          "string"
+                        ]
+                      }
+                    }
+                </raw>
+            </body>
+        </post>
+    </http>
+</scenario>

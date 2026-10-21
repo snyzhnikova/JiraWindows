@@ -1,0 +1,48 @@
+<scenario xmlns="http://www.testlum.com/testing/model/scenario"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.testlum.com/testing/model/scenario scenario.xsd">
+
+    <overview>
+        <description>Api test for login</description>
+        <name>Api test for login</name>
+        <jira>https://knubitech-team-sq2uw4em.atlassian.net//browse/WIN-7</jira>
+        <testRail enabled="true" testCaseId="1"/>
+    </overview>
+
+    <settings>
+        
+        <tags>api,db</tags>
+    </settings>
+
+    
+    <postgres alias="DATABASE"
+              comment="Get all user's from system"
+              file="expected_1.json">
+        <query>SELECT * FROM users</query>
+    </postgres>
+    <var comment="Create var for user email"
+         name="userEmail">
+        <path value="$[0].content[0].email"/>
+    </var>
+    <http alias="Testing_API"
+          comment="Get product by id">
+        <post endpoint="/users/login">
+            <response code="200" file="expected_3.json"/>
+            <body>
+                <raw>
+                    {
+                      "user": {
+                        "email": "{{userEmail}}",
+                        "password": "Test123@"
+                      }
+                    }
+                </raw>
+            </body>
+        </post>
+    </http>
+    <var comment="Create variable with constant value"
+         name="token">
+        <path value="$.user.token"/>
+    </var>
+
+</scenario>

@@ -1,0 +1,40 @@
+<scenario xmlns="http://www.testlum.com/testing/model/scenario"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.testlum.com/testing/model/scenario scenario.xsd">
+
+    <overview>
+        <description>Positive api scenario for creating user</description>
+        <name>Positive api scenario for creating user</name>
+        <testRail enabled="true" testCaseId="6"/>
+    </overview>
+
+    <settings>
+        
+        <tags>api</tags>
+    </settings>
+
+
+    <var comment="Create variable with constant value"
+         name="name">
+        <generate length="8">
+            <alphabetic/>
+        </generate>
+    </var>
+    <http alias="Testing_API"
+          comment="Get product by id">
+        <post endpoint="/users">
+            <response code="200" file="expected_2.json"/>
+            <body>
+                <raw>
+                    {
+                      "user": {
+                        "username": "{{name}}",
+                        "email": "{{name}}@gmail.com",
+                        "password": "Test123@"
+                      }
+                    }
+                </raw>
+            </body>
+        </post>
+    </http>
+</scenario>

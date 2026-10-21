@@ -1,0 +1,19 @@
+{
+  "article" : {
+    "slug" : "string-p(any)",
+    "title" : "string",
+    "description" : "string",
+    "body" : "string",
+    "createdAt" : "p(any)",
+    "updatedAt" : "p(any)",
+    "tagList" : [ "string" ],
+    "favorited" : false,
+    "favoritesCount" : 0,
+    "author" : {
+      "username" : "pavlo",
+      "image" : "string",
+      "admin" : false,
+      "following" : false
+    }
+  }
+}

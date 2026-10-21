@@ -1,0 +1,8 @@
+{
+  "user" : {
+    "username" : "p(any)",
+    "email" : "p(any)@gmail.com",
+    "admin" : false,
+    "token" : "p(any)"
+  }
+}

@@ -1,0 +1,39 @@
+<globalTestConfiguration xmlns="http://www.testlum.com/testing/model/global-config"
+                         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                         xsi:schemaLocation="http://www.testlum.com/testing/model/global-config global-config.xsd">
+
+    <parallelExecution>false</parallelExecution>
+    <stopScenarioOnFailure>false</stopScenarioOnFailure>
+    <stopIfInvalidScenario>false</stopIfInvalidScenario>
+    <delayBetweenScenarioRuns enabled="true" seconds="1"/>
+
+    <runScenariosByTag enabled="true">
+        <tag enabled="true" name="web"/>
+        <tag enabled="true" name="api"/>
+        <tag enabled="true" name="db"/>
+    </runScenariosByTag>
+
+    <report>
+        <extentReports onlyFailedScenarios="false"
+                       projectName="testlumProjectJiraIntegration">
+            <htmlReportGenerator enabled="true"/>
+            <klovServerReportGenerator enabled="false">
+                <mongoDB host="localhost" port="27017"/>
+                <klovServer url="http://localhost:80"/>
+            </klovServerReportGenerator>
+            <testRailReports enabled="true">
+                <username>s.nyzhnikova@knubitech.com</username>
+                <apiKey>voVq/wfDoWQ6QPzNRRED-/4feP1.DOl5tIWhcS4TJ</apiKey>
+                <url>https://testlumrelease.testrail.io/index.php?/api/v2</url>
+                <projectId>1</projectId>
+            </testRailReports>
+        </extentReports>
+    </report>
+
+    <environments>
+        <env enabled="true"
+             folder="local"
+             threads="1"/>
+    </environments>
+
+</globalTestConfiguration>
