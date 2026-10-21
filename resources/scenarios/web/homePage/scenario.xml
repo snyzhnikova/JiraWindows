@@ -5,11 +5,11 @@
     <overview>
         <description>Web automation test </description>
         <name>UI test for home page</name>
-        <jira>https://knubitech-team-sq2uw4em.atlassian.net//browse/WIN-6</jira>
+        <jira>https://knubitech-team-sq2uw4em.atlassian.net//browse/WIND-6</jira>
         <testRail enabled="true" testCaseId="2"/>
     </overview>
 
-    <settings>
+    <settings onlyThis="true">
         <tags>web</tags>
     </settings>
 
@@ -33,7 +33,7 @@
                        locator="signIn.loginP"
                        locatorStrategy="locatorId"
                        name="innerText">
-                <content>Login</content>
+                <content>Logins</content>
             </attribute>
         </assert>
     </web>
